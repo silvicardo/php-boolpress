@@ -1,4 +1,5 @@
 <?php
+
   $posts = [
       [
         'title' => 'Programmare fa bene al cervello, se sopravvivi',
@@ -34,11 +35,5 @@
       ],
   ];
 
-  function convertAndFormat($inputDate, $userFormat, $outputStringFormat) {
-    $myDateTime = DateTime::createFromFormat($userFormat, $inputDate);
-    $newDateString = $myDateTime->format('m/d/Y H:i:s');
-    $date = strtotime($newDateString);
-    return date($outputStringFormat, $date);
-  }
 
  ?>

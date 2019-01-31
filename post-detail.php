@@ -10,47 +10,46 @@
  <body>
   <?php
   include 'data.php';
+  include 'functions.php';
 
   $desiredSlug = $_GET['slug'];
 
-  $post = null;
-
-  $searchIndex = 0;
-
-  while($post === null) {
-    if (in_array($desiredSlug, $posts[$searchIndex]) !== false) {
-      $post =  $posts[$searchIndex];
-    }
-    $searchIndex++;
-  }
-  //IN ALTERNATIVA
-  // foreach ($posts as $currentPost) {
-  //   if (in_array($desiredSlug, $currentPost) !== false) {
-  //     $post = $currentPost;
-  //   }
-  // }
+  $post = getInstanceWithValueOf($posts, $desiredSlug);
 
   $dateString = convertAndFormat($post['published_at'], 'd/m/Y H:i:s','d F \a\l\l\e G');
 
   ?>
   <div id="main_container">
 
-    <div class="post_detail">
-      <h1><?php echo $post['title']; ?></h1>
-      <p>Pubblicato il <?php echo $dateString; ?></p>
+    <div class="post_detail" data-slug="<?php echo $post['slug']; ?>">
+
+      <h1><?php echo $post['title']; ?> -  <span>Pubblicato il <?php echo $dateString; ?></span></h1>
+
 
       <img src="<?php echo $post['image']; ?>" alt="">
 
       <p><?php echo $post['content'] ?></p>
 
       <h6><p>Tag: <?php echo  implode(',', $post['tag'] ); ?></p></h6>
+
     </div>
 
     <a href="posts.php">Torna alla Home</a>
 
   </div>
 
+  <div class="post_comments">
+    <script id="post_template" type="text/x-handlebars-template">
+
+        <h1>{{ commentName }} <span> - {{ commentMail }}</span></h1>
+        <p>{{ commentBody}}</p>
+
+      </div>
+    </script>
+  </div>
+
  	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js" charset="utf-8"></script>
  	<script src="dist/app.js" charset="utf-8"></script>
  </body>
  </html>

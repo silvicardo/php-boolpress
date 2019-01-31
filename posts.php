@@ -8,7 +8,9 @@
  	<title>php-boolpress</title>
  </head>
  <body>
-  <?php include 'data.php'; ?>
+  <?php
+  include 'data.php'; 
+  ?>
   <div id="main_container">
 
     <div class="posts">
@@ -26,6 +28,5 @@
   </div>
 
  	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
- 	<script src="dist/app.js" charset="utf-8"></script>
  </body>
  </html>
