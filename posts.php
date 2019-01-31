@@ -8,8 +8,20 @@
  	<title>php-boolpress</title>
  </head>
  <body>
-
+  <?php include 'data.php'; ?>
   <div id="main_container">
+
+    <div class="posts">
+      <?php foreach ($posts as $post) { ?>
+      <div class="post">
+        <a href="<?php echo 'post-detail.php?slug=' . $post['slug']; ?>">
+          <h1><?php echo $post['title']; ?></h1>
+        </a>
+        <p>Pubblicato il <?php echo $post['published_at']; ?></p>
+        <p><?php echo $post['content'] ?></p>
+      </div>
+      <?php  } ?>
+    </div>
 
   </div>
 

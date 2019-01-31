@@ -33,4 +33,12 @@
         'published_at' => '20/05/2018 09:00:00'
       ],
   ];
+
+  function convertAndFormat($inputDate, $userFormat, $outputStringFormat) {
+    $myDateTime = DateTime::createFromFormat($userFormat, $inputDate);
+    $newDateString = $myDateTime->format('m/d/Y H:i:s');
+    $date = strtotime($newDateString);
+    return date($outputStringFormat, $date);
+  }
+
  ?>
