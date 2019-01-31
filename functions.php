@@ -24,6 +24,14 @@
         return $item;
       }
     }
+
+  function getTheExcerpt($text, $length, $enderString) {
+
+    $putSpecialAtLength = chunk_split( $text, $length, '*cutHere*');
+    $excerpt = explode('*cutHere*', $putSpecialAtLength)[0];
+    return $excerpt . $enderString;
+  }
+
   }
 
 

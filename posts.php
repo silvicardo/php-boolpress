@@ -9,7 +9,8 @@
  </head>
  <body>
   <?php
-  include 'data.php'; 
+  include 'data.php';
+  //include 'functions.php';
   ?>
   <div id="main_container">
 
@@ -17,10 +18,15 @@
       <?php foreach ($posts as $post) { ?>
       <div class="post">
         <a href="<?php echo 'post-detail.php?slug=' . $post['slug']; ?>">
-          <h1><?php echo $post['title']; ?></h1>
+          <h1><?php echo $post['title']; ?> - <span>Pubblicato il <?php echo $post['published_at']; ?></span></h1>
         </a>
-        <p>Pubblicato il <?php echo $post['published_at']; ?></p>
-        <p><?php echo $post['content'] ?></p>
+
+        <p><?php
+        //per ora in linea, la funzione non va... da capire
+        $putSpecialAtLength = chunk_split( $post['content'], 150, '*cutHere*');
+        $excerpt = explode('*cutHere*', $putSpecialAtLength)[0];
+        echo $excerpt . '...';
+        ?></p>
       </div>
       <?php  } ?>
     </div>
