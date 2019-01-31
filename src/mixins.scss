@@ -1,0 +1,25 @@
+
+  /* Mixins*/
+
+ @mixin positionFixedTop {
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 1;
+ }
+
+ @mixin float($direction: 'left') {
+   @if ($direction == 'left') {
+    float: left;
+  } @else {
+    float: right;
+  }
+ }
+
+ @mixin clearfix {
+   &:after {
+     content: '';
+     display: table;
+     clear: both;
+   }
+ }

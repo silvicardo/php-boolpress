@@ -1,0 +1,42 @@
+/*REGOLE PRINCIPALI*/
+
+ 	* {
+ 	margin: 0;
+ 	padding:0;
+ 	box-sizing: border-box;
+ 	font-size: $defaultBaseFontSize;
+  font-family: $defaultFont;
+ }
+
+
+/*REGOLE PRINCIPALI ---> containers*/
+
+%containerBaseRules {
+  display: block;
+}
+
+ #main_container {
+ 	max-width: 100vw;
+ 	height: auto;
+ 	overflow: hidden;
+  background: lightgrey;
+}
+
+
+ /*REGOLE PRINCIPALI ---> fontSize Media Queries*/
+
+ @media all and (max-width: 1149px) {
+
+ 	* {
+ 		font-size: $tabletBaseFontSize;
+ 	}
+
+ }
+
+ @media all and (max-width: 768px) {
+
+  * {
+	 font-size: $mobileBaseFontSize;
+  }
+
+}
