@@ -4,6 +4,10 @@ include 'functions.php';
 
 //query functions
 
+function getThePageName(){
+  return basename($_SERVER['PHP_SELF']);
+}
+
 function getPostWithSlug($slug, $posts) {
   return getInstanceWithValueOf($posts, $slug);
 }
