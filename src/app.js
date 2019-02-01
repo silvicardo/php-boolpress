@@ -4,7 +4,6 @@
 
  $(document).ready(function () {
 
-
    var slug = $('.post_detail').attr('data-slug');
    var url = '/php-boolpress/routes/commentsRoute.php?slug=' + slug;
 

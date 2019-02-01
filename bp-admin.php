@@ -1,5 +1,5 @@
 <?php include 'header.php'; ?>
 
-    <?php include 'templateParts/tp_homePagePosts.php'; ?>
+    <h1>We are still building this app</h1>
 
 <?php include 'footer.php'; ?>
