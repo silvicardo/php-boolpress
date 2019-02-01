@@ -8,27 +8,29 @@
    var slug = $('.post_detail').attr('data-slug');
    var url = '/php-boolpress/routes/commentsRoute.php?slug=' + slug;
 
-   $.getJSON(url, function(comments){
-     console.log(comments);
+   $.getJSON(url, showComments);
 
-    for (var i = 0; i < comments.length; i++) {
 
-      var htmlTemplate = $('#post_template').html();
-      var template = Handlebars.compile(htmlTemplate);
+  //FUNCTIONS
 
-      var context = {
-        commentName: comments[i].name,
-        commentMail: comments[i].email,
-        commentBody: comments[i].body
-      }
+  function showComments(comments){
 
-      var html = template(context);
+        for (var i = 0; i < comments.length; i++) {
 
-      $('.post_comments').append(html);
+          var htmlTemplate = $('#post_template').html();
+          var template = Handlebars.compile(htmlTemplate);
 
-    }
+          var context = {
+            commentName: comments[i].name,
+            commentMail: comments[i].email,
+            commentBody: comments[i].body
+          }
 
-  });
+          var html = template(context);
 
+          $('.post_comments').append(html);
+
+        }
+  }
 
 });

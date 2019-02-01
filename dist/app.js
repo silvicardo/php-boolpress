@@ -98,9 +98,9 @@ console.log('test js');
 $(document).ready(function () {
   var slug = $('.post_detail').attr('data-slug');
   var url = '/php-boolpress/routes/commentsRoute.php?slug=' + slug;
-  $.getJSON(url, function (comments) {
-    console.log(comments);
+  $.getJSON(url, showComments); //FUNCTIONS
 
+  function showComments(comments) {
     for (var i = 0; i < comments.length; i++) {
       var htmlTemplate = $('#post_template').html();
       var template = Handlebars.compile(htmlTemplate);
@@ -112,7 +112,7 @@ $(document).ready(function () {
       var html = template(context);
       $('.post_comments').append(html);
     }
-  });
+  }
 });
 
 /***/ }),

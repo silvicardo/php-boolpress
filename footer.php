@@ -4,6 +4,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js" charset="utf-8"></script>
 <?php if (getThePageName() === 'post-detail.php'){ ?>
   	<script src="dist/app.js" charset="utf-8"></script>
-<?php ; ?>
+<?php } ?>
 </body>
 </html>
