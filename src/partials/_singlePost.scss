@@ -1,0 +1,42 @@
+
+.post_detail {
+  h1.title {
+  font-weight: $boldestFont;
+  }
+  h3.date {
+    color: white;
+  }
+  p.content {
+    font-size: $biggerFontSize;
+    text-align: justify;
+  }
+  h6.tags {
+    span {
+      font-weight: $bolderFont;
+    }
+  }
+}
+
+
+.post_comments {
+  h2.section_title{
+    font-size: $xlFontSize;
+    font-weight: $boldestFont;
+    text-transform: uppercase;
+  }
+  .comment {
+    h3.title {
+      font-family: $secondaryFont;
+      font-weight: $bolderFont;
+      text-transform: capitalize;
+      color: white;
+      span {
+
+      }
+    }
+    p.body {
+
+    }
+  }
+
+}

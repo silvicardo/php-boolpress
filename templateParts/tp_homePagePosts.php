@@ -11,13 +11,13 @@
     <?php }
   } ?>
   <!-- POSTS/POSTS FILTERED BY TAG POSTS AREA -->
-  <div class="posts">
+  <div class="posts container">
     <?php foreach ($posts as $post) { ?>
-      <div class="post">
+      <div class="post jumbotron bg-light">
         <a href="<?php echo 'post-detail.php?slug=' . $post['slug']; ?>">
-          <h1><?php echo theTitle($post); ?> - <span>Pubblicato il <?php echo theDate($post); ?></span></h1>
+          <h3 class="title"><?php echo theTitle($post); ?> - <span class="date">Pubblicato il <?php echo theDate($post); ?></span></h3>
         </a>
-        <p><?php echo theExcerpt($post); ?></p>
+        <p class="excerpt mt-4"><?php echo theExcerpt($post); ?></p>
       </div>
     <?php  } ?>
   </div>

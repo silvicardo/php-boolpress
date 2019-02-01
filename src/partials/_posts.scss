@@ -1,0 +1,16 @@
+
+.posts {
+  h3.title {
+    font-size: $xlFontSize;
+    font-weight: $bolderFont;
+    color: black;
+    span.date {
+      font-size: $smallerFontSize;
+    }
+  }
+  p.excerpt {
+    font-family: $secondaryFont;
+    font-size: $regularBaseFontSize;
+    text-align: justify;
+  }
+}

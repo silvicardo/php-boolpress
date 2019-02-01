@@ -1,11 +1,16 @@
 
 
-<div class="post_comments">
+<div class="post_comments container ">
+
+  <h2 class="section_title">Commenti</h2>
+
   <script id="post_template" type="text/x-handlebars-template">
 
-      <h1>{{ commentName }} <span> - {{ commentMail }}</span></h1>
-      <p>{{ commentBody}}</p>
+  <div class="comment jumbotron my-5 bg-info">
+    <h3 class="title mb-4">{{ commentName }} <span class="mail"> - {{ commentMail }}</span></h1>
+    <p class="body">{{ commentBody}}</p>
+  </div>
 
-    </div>
   </script>
+
 </div>
