@@ -27,7 +27,6 @@
   }
 
   function getAllInstancesWithValueAtKey($array, $key,  $containedValue) : array {
-
     $arrayOut = [];
     foreach ($array as $item)
     {
@@ -35,7 +34,6 @@
         $arrayOut[] =  $item;
       }
     }
-
   return  $arrayOut;
   }
 

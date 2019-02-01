@@ -1,16 +1,26 @@
 
 
 
-  <?php $chosenTag = $_GET['tag']; ?>
-  <?php if (!empty($chosenTag)){
+  <?php
+
+  $chosenTag = $_GET['tag'];
+
+  if (!empty($chosenTag)){
     $filteredPostsByTag = getPostsWithTag($chosenTag, $posts);
+
     if (!empty($filteredPostsByTag)) {
       $posts = $filteredPostsByTag;
     } else { ?>
-      <h1>Your tag is not valid, showing all posts</h1>
+      <div class="container jumbotron">
+        <h1>Your tag is not valid, showing all posts</h1>
+      </div>
     <?php }
-  } ?>
+  }
+
+  ?>
+
   <!-- POSTS/POSTS FILTERED BY TAG POSTS AREA -->
+
   <div class="posts container">
     <?php foreach ($posts as $post) { ?>
       <div class="post jumbotron bg-light">

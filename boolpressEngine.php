@@ -14,7 +14,6 @@ function getPostWithSlug($slug, $posts) {
 
 function getCommentsPerPostWith($slug, $allComments) {
   return getInstanceWithKeyOf($allComments, $slug);
-
 }
 
 function getBlogTags($posts){
