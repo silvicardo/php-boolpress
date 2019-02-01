@@ -6,7 +6,7 @@
 
 
    var slug = $('.post_detail').attr('data-slug');
-   var url = '/php-boolpress/comments.php?slug=' + slug;
+   var url = '/php-boolpress/routes/commentsRoute.php?slug=' + slug;
 
    $.getJSON(url, function(comments){
      console.log(comments);

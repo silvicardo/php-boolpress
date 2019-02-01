@@ -8,44 +8,15 @@
  	<title>php-boolpress</title>
  </head>
  <body>
-  <?php
-  include 'data.php';
-  include 'functions.php';
+   
+  <?php include 'boolpressEngine.php'; ?>
 
-  $desiredSlug = $_GET['slug'];
-
-  $post = getInstanceWithValueOf($posts, $desiredSlug);
-
-  $dateString = convertAndFormat($post['published_at'], 'd/m/Y H:i:s','d F \a\l\l\e G');
-
-  ?>
   <div id="main_container">
 
-    <div class="post_detail" data-slug="<?php echo $post['slug']; ?>">
+    <?php include 'templateParts/tp_singlePost.php'; ?>
 
-      <h1><?php echo $post['title']; ?> -  <span>Pubblicato il <?php echo $dateString; ?></span></h1>
+    <?php include 'templateParts/tp_singlePostComments.php'; ?>
 
-
-      <img src="<?php echo $post['image']; ?>" alt="">
-
-      <p><?php echo $post['content'] ?></p>
-
-      <h6><p>Tag: <?php echo  implode(',', $post['tag'] ); ?></p></h6>
-
-    </div>
-
-    <a href="posts.php">Torna alla Home</a>
-
-  </div>
-
-  <div class="post_comments">
-    <script id="post_template" type="text/x-handlebars-template">
-
-        <h1>{{ commentName }} <span> - {{ commentMail }}</span></h1>
-        <p>{{ commentBody}}</p>
-
-      </div>
-    </script>
   </div>
 
  	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

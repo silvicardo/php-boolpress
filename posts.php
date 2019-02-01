@@ -8,28 +8,14 @@
  	<title>php-boolpress</title>
  </head>
  <body>
-  <?php
-  include 'data.php';
-  //include 'functions.php';
-  ?>
+
+  <?php include 'boolpressEngine.php'; ?>
+
   <div id="main_container">
 
-    <div class="posts">
-      <?php foreach ($posts as $post) { ?>
-      <div class="post">
-        <a href="<?php echo 'post-detail.php?slug=' . $post['slug']; ?>">
-          <h1><?php echo $post['title']; ?> - <span>Pubblicato il <?php echo $post['published_at']; ?></span></h1>
-        </a>
+    <?php include 'templateParts/tp_tagsForm.php'; ?>
 
-        <p><?php
-        //per ora in linea, la funzione non va... da capire
-        $putSpecialAtLength = chunk_split( $post['content'], 150, '*cutHere*');
-        $excerpt = explode('*cutHere*', $putSpecialAtLength)[0];
-        echo $excerpt . '...';
-        ?></p>
-      </div>
-      <?php  } ?>
-    </div>
+    <?php include 'templateParts/tp_homePagePosts.php'; ?>
 
   </div>
 
